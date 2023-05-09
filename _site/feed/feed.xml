@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
 	<title>cascadia.computer</title>
 	<subtitle>Hello! I am using this space to write about tech and other things I find interesting</subtitle>
-	<link href="https://cascadia.computer/_site/feed/feed.xml" rel="self"/>
-	<link href="https://cascadia.computer/_site/"/>
+	<link href="https://cascadia.computer/cascadia.computer/_site/feed/feed.xml" rel="self"/>
+	<link href="https://cascadia.computer/cascadia.computer/_site/"/>
 	<updated>2023-08-05T00:00:00Z</updated>
 	<id>https://cascadia.computer</id>
 	<author>
@@ -13,9 +13,9 @@
 	
 	<entry>
 		<title>Hello World</title>
-		<link href="https://cascadia.computer/_site/blog/helloworld/"/>
+		<link href="https://cascadia.computer/cascadia.computer/_site/blog/helloworld/"/>
 		<updated>2023-08-05T00:00:00Z</updated>
-		<id>https://cascadia.computer/_site/blog/helloworld/</id>
+		<id>https://cascadia.computer/cascadia.computer/_site/blog/helloworld/</id>
 		<content type="html">&lt;p&gt;Hello all!&lt;/p&gt;
 &lt;p&gt;First, akward intro time:&lt;/p&gt;
 &lt;p&gt;My name is Justin Willis. I do software engineering and lots of hiking. Tech is my main passion, especially web technology and building apps / sites / tools that work for EVERYONE, not just folx with 1000$+ devices.&lt;/p&gt;

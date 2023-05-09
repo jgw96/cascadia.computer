@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://cascadia.computer/_site/about/</loc>
+		<loc>https://cascadia.computer/cascadia.computer/_site/about/</loc>
 		<lastmod>2023-05-09</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/_site/blog/</loc>
+		<loc>https://cascadia.computer/cascadia.computer/_site/blog/</loc>
 		<lastmod>2023-05-09</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/_site/</loc>
+		<loc>https://cascadia.computer/cascadia.computer/_site/</loc>
 		<lastmod>2023-05-09</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/_site/tags/</loc>
+		<loc>https://cascadia.computer/cascadia.computer/_site/tags/</loc>
 		<lastmod>2023-05-09</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/_site/blog/helloworld/</loc>
+		<loc>https://cascadia.computer/cascadia.computer/_site/blog/helloworld/</loc>
 		<lastmod>2023-08-05</lastmod>
 	</url>
 </urlset>
