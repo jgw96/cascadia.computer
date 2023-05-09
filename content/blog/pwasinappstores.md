@@ -11,7 +11,7 @@ It's a story as old as time itself, you are a web developer and you want to buil
 ### PWA
 A Progressive Web Application (PWA) is a type of web app that combines the best features of native apps and websites. A PWA can run on any device and browser, and can work offline or on low-quality networks. A PWA can also access device capabilities such as camera, microphone, push notifications, and more through web standard APIs. A PWA is fast, reliable, and engaging for users, and can improve the performance and user experience of web apps.
 
-However, PWAs may have less access to operating system-specific APIs than hybrid applications. This issue has been addressed in a large way by the Project Fugu initiative. Nonetheless, hybrid and native apps will always have access to the latest native capabilities quicker than PWAs.
+However, PWAs may have less access to operating system-specific APIs than hybrid applications. This issue has been addressed in a large way by the [Project Fugu](https://developer.chrome.com/blog/fugu-status/) initiative. Nonetheless, hybrid and native apps will always have access to the latest native capabilities quicker than PWAs.
 
 ### Hybrid App
 A hybrid app uses a common web technology stack, such as HTML, CSS, and JavaScript, to create a user interface that can run on multiple platforms. Additionally, a hybrid app can use a native wrapper such as React Native or Flutter along with plugins to access the device’s features. However, this also leads to the largest advantage for React Native: platform-specific native capabilities can be accessed relatively easily. In contrast, in the web world, capabilities must be built into the browser as web APIs which can take much longer to actually be implemented in browsers.
