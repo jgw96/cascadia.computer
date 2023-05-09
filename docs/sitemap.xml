@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	
+	<url>
+		<loc>https://cascadia.computer/about/</loc>
+		<lastmod>2023-05-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/blog/</loc>
+		<lastmod>2023-05-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/</loc>
+		<lastmod>2023-05-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/tags/</loc>
+		<lastmod>2023-05-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/blog/helloworld/</loc>
+		<lastmod>2023-08-05</lastmod>
+	</url>
+</urlset>
