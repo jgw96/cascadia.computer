@@ -6,7 +6,7 @@ date: 2023-05-08
 
 Hello all! 
 
-First, akward intro time:
+First, awkward intro time:
 
 My name is Justin Willis. I do software engineering and lots of hiking. Tech is my main passion, especially web technology and building apps / sites / tools that work for EVERYONE, not just folx with 1000$+ devices. 
 
