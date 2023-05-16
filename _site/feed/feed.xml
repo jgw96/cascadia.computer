@@ -4,12 +4,67 @@
 	<subtitle>Hello! I am using this space to write about tech and other things I find interesting</subtitle>
 	<link href="https://cascadia.computer/cascadia.computer/_site/feed/feed.xml" rel="self"/>
 	<link href="https://cascadia.computer/cascadia.computer/_site/"/>
-	<updated>2023-05-09T00:00:00Z</updated>
+	<updated>2023-05-15T00:00:00Z</updated>
 	<id>https://cascadia.computer</id>
 	<author>
 		<name>Justin Willis</name>
 		<email>jgw9617@gmail.com</email>
 	</author>
+	
+	<entry>
+		<title>Building Memos AI, a developers perspective</title>
+		<link href="https://cascadia.computer/cascadia.computer/_site/blog/memosai/"/>
+		<updated>2023-05-15T00:00:00Z</updated>
+		<id>https://cascadia.computer/cascadia.computer/_site/blog/memosai/</id>
+		<content type="html">&lt;p&gt;Hello! I recently released an app I&#39;ve been working, &lt;a href=&quot;https://www.recordergo.app&quot;&gt;Memos AI&lt;/a&gt;, and I wanted to talk a bit about how I built this app. Before we dive in, lets touch on exactly what Memos AI is.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memos AI is a new voice memos app that uses artificial intelligence to provide highly accurate transcriptions. The app is available on Windows, Android, Linux and iOS, and it can be used to transcribe any type of audio recording, including lectures, meetings, and interviews.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It is also open source, and can be found &lt;a href=&quot;https://github.com/jgw96/audio-notes-go&quot;&gt;here on Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With that out of the way, what are we going to cover exactly? Let&#39;s touch on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Why I went with a &lt;a href=&quot;https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/&quot;&gt;Progressive Web App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;My tech stack&lt;/li&gt;
+&lt;li&gt;Publishing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&#39;s dive in!&lt;/p&gt;
+&lt;h2 id=&quot;why-a-pwa-progressive-web-application&quot; tabindex=&quot;-1&quot;&gt;Why a PWA (Progressive Web Application) &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;PWAs are web apps that are installable on a user&#39;s device and can be used like any other native app. They offer a number of benefits over traditional web apps, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Faster loading times: PWAs are cached on the user&#39;s device, which means that they load much faster than traditional web apps.&lt;/li&gt;
+&lt;li&gt;Better offline support: PWAs can work offline, which is important for users who don&#39;t have a reliable internet connection.&lt;/li&gt;
+&lt;li&gt;More engaging user experience: PWAs can be installed on the user&#39;s home screen and can be used like any other native app. This makes them more engaging and easier to use.&lt;/li&gt;
+&lt;li&gt;Available in App Stores: PWAs can be published to the Microsoft Store, the Google Play STore and other stores, unlike traditional web apps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PWAs also offer benefits over a native app. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cross-Platform out of the box: PWAs offer one of the only true &amp;quot;build once, run everywhere&amp;quot; experiences. You can take your single codebase and deploy it to the web AND the app stores with no code changes.&lt;/li&gt;
+&lt;li&gt;arm64 support: PWAs run natively on both arm and x86/64 devices, with no extra effort needed from the developer&lt;/li&gt;
+&lt;li&gt;Wide Reach: Progressive Web Apps allow you to reach users wherever they already are, whether that is in their web browser, or in an app store.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;tech-stack&quot; tabindex=&quot;-1&quot;&gt;Tech Stack &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ahh the age old tech stack discussion. First, as you always should with a tech stack discussion, lets discuss what my user goals are for Memos AI:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TRULY cross-platform: Not only should Memos AI work on any OS, it should also work on ANY device, no matter how powerful that device is, or what its network connection is like&lt;/li&gt;
+&lt;li&gt;Fast, on any device and any network connection&lt;/li&gt;
+&lt;li&gt;Simple: I am a fan of simplicity over almost everything, in most cases atleast. Simplicity, from my experience, leads to fast apps that work better for users.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With this in mind (and yes I also work on the &lt;a href=&quot;https://www.pwabuilder.com&quot;&gt;PWABuilder project&lt;/a&gt;) I decided on the following stack:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href=&quot;https://github.com/pwa-builder/pwa-starter&quot;&gt;PWABuilder PWA Starter&lt;/a&gt; for the app itself.&lt;/li&gt;
+&lt;li&gt;An Azure Web App for Containers for my backend. My server is a simple Express based Node.js server running in a Docker container.&lt;/li&gt;
+&lt;li&gt;For transcriptions: The Azure Speech SDK for live transcriptions, and the OpenAI Whisper model for final transcriptions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;publishing&quot; tabindex=&quot;-1&quot;&gt;Publishing &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For publishing, I wanted to take full advantage of the fact that my app is cross-platform. I deployed to the web first, using &lt;a href=&quot;https://learn.microsoft.com/en-us/azure/static-web-apps/overview&quot;&gt;Azure Static Web Apps&lt;/a&gt;. Static Web Apps, especially when used with Github Actions, makes it incredibly easy to deploy a web app. You get HTTPS out of the box, and other features such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Functions support&lt;/li&gt;
+&lt;li&gt;Easy Database connection&lt;/li&gt;
+&lt;li&gt;Pre-Configured authentication&lt;/li&gt;
+&lt;li&gt;Available CDN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I then decided that my first store I would publish to is the Microsoft Store. Using PWABuilder, it was as easy as grabbing the URL that Azure Static Web Apps created for my app, going to https://www.pwabuilder.com, and clicking a few buttons. PWABuilder then gave me an MSIX that you can submit to the Microsoft Store, just like a UWP app. And just like that, my app, still with only a single codebase, is &lt;a href=&quot;https://www.microsoft.com/store/productId/9PP8DL2QTJSG&quot;&gt;in the Microsoft Store&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And thats it! To get started building a new app like I did here, go to &lt;a href=&quot;https://www.pwabuilder.com/&quot;&gt;PWABuilder&lt;/a&gt; and click &amp;quot;Start a new PWA&amp;quot;.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>How do I, a web developer, build an app?</title>
