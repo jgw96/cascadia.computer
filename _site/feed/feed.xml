@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
 	<title>cascadia.computer</title>
 	<subtitle>Hello! I am using this space to write about tech and other things I find interesting</subtitle>
-	<link href="https://cascadia.computer/eleventy-base-blog/feed/feed.xml" rel="self"/>
-	<link href="https://cascadia.computer/eleventy-base-blog/"/>
+	<link href="https://cascadia.computer/cascadia.computer/_site/feed/feed.xml" rel="self"/>
+	<link href="https://cascadia.computer/cascadia.computer/_site/"/>
 	<updated>2023-07-25T00:00:00Z</updated>
 	<id>https://cascadia.computer</id>
 	<author>
@@ -13,14 +13,14 @@
 	
 	<entry>
 		<title>What is a PWA?</title>
-		<link href="https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/"/>
+		<link href="https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/"/>
 		<updated>2023-07-25T00:00:00Z</updated>
-		<id>https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/</id>
+		<id>https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/</id>
 		<content type="html">&lt;p&gt;Progressive Web Applications&lt;/p&gt;
 &lt;p&gt;You have probably heard of them, maybe have read a few articles on them, but, one thing I have personally found lacking is a clear answer to &amp;quot;What is a PWA?&amp;quot;. Today, I hope to answer that question!&lt;/p&gt;
-&lt;h2 id=&quot;what-is-a-pwa&quot; tabindex=&quot;-1&quot;&gt;What is a PWA? &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;what-is-a-pwa&quot; tabindex=&quot;-1&quot;&gt;What is a PWA? &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;At their simplest, a PWA is a web app that uses a &lt;a href=&quot;https://docs.pwabuilder.com/#/home/pwa-intro?id=web-app-manifests&quot;&gt;Web Manifest&lt;/a&gt;, &lt;a href=&quot;https://www.cloudflare.com/learning/ssl/what-is-https/&quot;&gt;https&lt;/a&gt; and a &lt;a href=&quot;https://docs.pwabuilder.com/#/home/pwa-intro?id=service-workers&quot;&gt;Service Worker&lt;/a&gt;. However, they are much much more than the technical requirements. Let&#39;s dive in!&lt;/p&gt;
-&lt;h3 id=&quot;best-of-web-native&quot; tabindex=&quot;-1&quot;&gt;Best of Web + Native &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;best-of-web-native&quot; tabindex=&quot;-1&quot;&gt;Best of Web + Native &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Progressive Web Applications bring together the best of the web with the best of installed applications. Like a web app, they:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Are cross-platform, including CPU architecture, by default&lt;/li&gt;
@@ -37,11 +37,11 @@
 &lt;li&gt;Work reliably on a bad network connection&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This is a combination of features that, in the past, required a &amp;quot;hybrid&amp;quot; solution such as Electron, Cordova or Capacitor. However, with the power of the modern web platform, you can achieve the same with just web tech!&lt;/p&gt;
-&lt;h3 id=&quot;learn-more-on-capabilities&quot; tabindex=&quot;-1&quot;&gt;Learn more on capabilities &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;learn-more-on-capabilities&quot; tabindex=&quot;-1&quot;&gt;Learn more on capabilities &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The &lt;a href=&quot;https://developer.chrome.com/blog/fugu-status/&quot;&gt;Project Fugu Initiative&lt;/a&gt; is the best place to start learning about all the capabilities that PWAs have access too.&lt;/p&gt;
-&lt;h2 id=&quot;why-build-a-pwa&quot; tabindex=&quot;-1&quot;&gt;Why build a PWA? &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;why-build-a-pwa&quot; tabindex=&quot;-1&quot;&gt;Why build a PWA? &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Ther are many reasons you may want to build a PWA. Lets go over some of the common developer facing reasons, and then we will cover some benefits for your users!&lt;/p&gt;
-&lt;h3 id=&quot;developer-facing&quot; tabindex=&quot;-1&quot;&gt;Developer facing &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;developer-facing&quot; tabindex=&quot;-1&quot;&gt;Developer facing &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Truly one codebase that runs everywhere. No need for a seperate android codebase, iOS codebase etc. No need for a hybrid codebase that has seperate code running in seperate environments. This is all pure web tech.&lt;/li&gt;
 &lt;li&gt;Already a Web Developer? You have the skills to start building a PWA!&lt;/li&gt;
@@ -49,14 +49,14 @@
 &lt;li&gt;Develop the app in your browser, with extremely quick turnaround on code changes etc.&lt;/li&gt;
 &lt;li&gt;App Distribution: You users can find your app anywhere, from the web to the app stores.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;user-facing&quot; tabindex=&quot;-1&quot;&gt;User facing &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;user-facing&quot; tabindex=&quot;-1&quot;&gt;User facing &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Much lighter weight than many native apps, and definitely lighter weight than Electron, Cordova or Capacitor apps. This means less storage space taken by your app, quicker start times and more for your users.&lt;/li&gt;
 &lt;li&gt;Inclusiveness: PWAs dont require expensive, powerful devices to function well.&lt;/li&gt;
 &lt;li&gt;Reliable on any network connection.&lt;/li&gt;
 &lt;li&gt;Users can use your app in their preferred manner, from the browser to installing from an app store.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;examples&quot; tabindex=&quot;-1&quot;&gt;Examples &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;examples&quot; tabindex=&quot;-1&quot;&gt;Examples &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The following are some of my favorite PWAs that I use all the time:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://squoosh.app/&quot;&gt;Squoosh&lt;/a&gt;&lt;/li&gt;
@@ -72,9 +72,9 @@
 	
 	<entry>
 		<title>Building Memos AI, a developers perspective</title>
-		<link href="https://cascadia.computer/eleventy-base-blog/blog/memosai/"/>
+		<link href="https://cascadia.computer/cascadia.computer/_site/blog/memosai/"/>
 		<updated>2023-05-15T00:00:00Z</updated>
-		<id>https://cascadia.computer/eleventy-base-blog/blog/memosai/</id>
+		<id>https://cascadia.computer/cascadia.computer/_site/blog/memosai/</id>
 		<content type="html">&lt;p&gt;Hello! I recently released an app I&#39;ve been working, &lt;a href=&quot;https://www.recordergo.app&quot;&gt;Memos AI&lt;/a&gt;, and I wanted to talk a bit about how I built this app. Before we dive in, lets touch on exactly what Memos AI is.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Memos AI is a new voice memos app that uses artificial intelligence to provide highly accurate transcriptions. The app is available on Windows, Android, Linux and iOS, and it can be used to transcribe any type of audio recording, including lectures, meetings, and interviews.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;It is also open source, and can be found &lt;a href=&quot;https://github.com/jgw96/audio-notes-go&quot;&gt;here on Github&lt;/a&gt;.&lt;/p&gt;
@@ -85,7 +85,7 @@
 &lt;li&gt;Publishing&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Let&#39;s dive in!&lt;/p&gt;
-&lt;h2 id=&quot;why-a-pwa-progressive-web-application&quot; tabindex=&quot;-1&quot;&gt;Why a PWA (Progressive Web Application) &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;why-a-pwa-progressive-web-application&quot; tabindex=&quot;-1&quot;&gt;Why a PWA (Progressive Web Application) &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;PWAs are web apps that are installable on a user&#39;s device and can be used like any other native app. They offer a number of benefits over traditional web apps, including:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Faster loading times: PWAs are cached on the user&#39;s device, which means that they load much faster than traditional web apps.&lt;/li&gt;
@@ -99,7 +99,7 @@
 &lt;li&gt;arm64 support: PWAs run natively on both arm and x86/64 devices, with no extra effort needed from the developer&lt;/li&gt;
 &lt;li&gt;Wide Reach: Progressive Web Apps allow you to reach users wherever they already are, whether that is in their web browser, or in an app store.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;tech-stack&quot; tabindex=&quot;-1&quot;&gt;Tech Stack &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;tech-stack&quot; tabindex=&quot;-1&quot;&gt;Tech Stack &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Ahh the age old tech stack discussion. First, as you always should with a tech stack discussion, lets discuss what my user goals are for Memos AI:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;TRULY cross-platform: Not only should Memos AI work on any OS, it should also work on ANY device, no matter how powerful that device is, or what its network connection is like&lt;/li&gt;
@@ -112,7 +112,7 @@
 &lt;li&gt;An Azure Web App for Containers for my backend. My server is a simple Express based Node.js server running in a Docker container.&lt;/li&gt;
 &lt;li&gt;For transcriptions: The Azure Speech SDK for live transcriptions, and the OpenAI Whisper model for final transcriptions.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;publishing&quot; tabindex=&quot;-1&quot;&gt;Publishing &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;publishing&quot; tabindex=&quot;-1&quot;&gt;Publishing &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/memosai/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;For publishing, I wanted to take full advantage of the fact that my app is cross-platform. I deployed to the web first, using &lt;a href=&quot;https://learn.microsoft.com/en-us/azure/static-web-apps/overview&quot;&gt;Azure Static Web Apps&lt;/a&gt;. Static Web Apps, especially when used with Github Actions, makes it incredibly easy to deploy a web app. You get HTTPS out of the box, and other features such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Azure Functions support&lt;/li&gt;
@@ -127,27 +127,27 @@
 	
 	<entry>
 		<title>How do I, a web developer, build an app?</title>
-		<link href="https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/"/>
+		<link href="https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/"/>
 		<updated>2023-05-09T00:00:00Z</updated>
-		<id>https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/</id>
+		<id>https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/</id>
 		<content type="html">&lt;p&gt;It&#39;s a story as old as time itself, you are a web developer and you want to build an app. You want that app to be on the web of course, but ALSO be in the app stores. What do you do? You can go the hybrid route, like with React Native, or you can build a Progressive Web App(PWA). But, if you go the PWA route, can you put it in the app stores still? And, if you go the hybrid route, what do you lose on the web side of things? Let&#39;s dive in.&lt;/p&gt;
-&lt;h2 id=&quot;what-is-a-pwa-what-is-a-hybrid-app&quot; tabindex=&quot;-1&quot;&gt;What is a PWA? What is a hybrid app? &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;pwa&quot; tabindex=&quot;-1&quot;&gt;PWA &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;what-is-a-pwa-what-is-a-hybrid-app&quot; tabindex=&quot;-1&quot;&gt;What is a PWA? What is a hybrid app? &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;pwa&quot; tabindex=&quot;-1&quot;&gt;PWA &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;A Progressive Web Application (PWA) is a type of web app that combines the best features of native apps and websites. A PWA can run on any device and browser, and can work offline or on low-quality networks. A PWA can also access device capabilities such as camera, microphone, push notifications, and more through web standard APIs. A PWA is fast, reliable, and engaging for users, and can improve the performance and user experience of web apps.&lt;/p&gt;
 &lt;p&gt;However, PWAs may have less access to operating system-specific APIs than hybrid applications. This issue has been addressed in a large way by the &lt;a href=&quot;https://developer.chrome.com/blog/fugu-status/&quot;&gt;Project Fugu&lt;/a&gt; initiative. Nonetheless, hybrid and native apps will always have access to the latest native capabilities quicker than PWAs.&lt;/p&gt;
-&lt;h3 id=&quot;hybrid-app&quot; tabindex=&quot;-1&quot;&gt;Hybrid App &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;hybrid-app&quot; tabindex=&quot;-1&quot;&gt;Hybrid App &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;A hybrid app uses a common web technology stack, such as HTML, CSS, and JavaScript, to create a user interface that can run on multiple platforms. Additionally, a hybrid app can use a native wrapper such as React Native or Flutter along with plugins to access the device’s features. However, this also leads to the largest advantage for React Native: platform-specific native capabilities can be accessed relatively easily. In contrast, in the web world, capabilities must be built into the browser as web APIs which can take much longer to actually be implemented in browsers.&lt;/p&gt;
 &lt;p&gt;This native wrapper means that hybrid apps must be distributed as “bundles” that include both the web code and native code for each platform. This makes them larger than PWAs and more difficult to maintain.&lt;/p&gt;
-&lt;h2 id=&quot;pwas-in-the-app-stores&quot; tabindex=&quot;-1&quot;&gt;PWAs in the app stores &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;pwas-in-the-app-stores&quot; tabindex=&quot;-1&quot;&gt;PWAs in the app stores &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;One of the biggest disadvantages traditionally of PWAs was the fact that you could not ship them to app stores without wrapping them in a hybrid wrapper. There are multiple problems with this, however the two most impactful are that you then no longer have one codebase that can easily run on the web, and that your code may need to be updated to work in a webview compared to the actual browser.&lt;/p&gt;
 &lt;p&gt;However, this is no longer the case. There are projects, such as &lt;a href=&quot;https://www.pwabuilder.com&quot;&gt;PWABuilder&lt;/a&gt; (disclaimer, I work on PWABuilder at Microsoft) that allow you to easily package your PWA for the Microsoft Store and Google Play, with experimental support for the Apple App Store. Importantly, this works by using the native support built into these stores for PWAs to enable you to ship your PWA with no wrapper needed. You simply package your PWA as an MSIX or APK (for Windows and Android respectively) and publish them to the store, just like you would with a native app. And, I think this is really cool, all you need is the URL to your PWA to do this. There are no wrappers, no extra build tools, no native SDKs to install.&lt;/p&gt;
-&lt;h2 id=&quot;hybrid-apps-on-the-web&quot; tabindex=&quot;-1&quot;&gt;Hybrid apps on the web &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;hybrid-apps-on-the-web&quot; tabindex=&quot;-1&quot;&gt;Hybrid apps on the web &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Let&#39;s look at this from the &lt;a href=&quot;https://github.com/facebook/react-native&quot;&gt;React Native&lt;/a&gt; point of view.&lt;/p&gt;
 &lt;p&gt;React Native is a framework that allows you to build native mobile apps using JavaScript and React. However, you may also want to ship your React Native app to the web, so that users can access it from any browser. How do you do that?&lt;/p&gt;
 &lt;p&gt;One option is to use react-native-web, a library that implements React Native components and APIs for the web. This way, you can reuse most of your React Native code and create a web version of your app with minimal changes. To use react-native-web, you need to install it as a dependency and configure your bundler (such as webpack) to alias react-native to react-native-web. You also need to make sure that your app uses only the components and APIs that are supported by react-native-web, or provide fallbacks for the ones that are not.&lt;/p&gt;
 &lt;p&gt;Another option is to use Expo, a platform that simplifies the development and deployment of React Native apps. Expo provides a web browser target that allows you to run your React Native app in the browser using react-native-web under the hood. To use Expo, you need to install the Expo CLI and initialize your project with expo init. Then, you can run expo start --web to launch your app in the browser. You can also use Expo to build and publish your web app with expo build:web and expo publish:web.&lt;/p&gt;
 &lt;p&gt;As you can see, while it is possible, it does take extra tools, and work, to ship your hybrid app to the web. In fact, if your components are not supported by react-native-web, it can be ALOT of work.&lt;/p&gt;
-&lt;h2 id=&quot;next-steps&quot; tabindex=&quot;-1&quot;&gt;Next Steps &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;next-steps&quot; tabindex=&quot;-1&quot;&gt;Next Steps &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;At the end of the day, whether you should build a PWA or hybrid app can come down to many factors. My goal with this blog is not to say which one you should choose, as it is app and situation specific. My goal was instead to show that shipping to the app stores is not a blocker for going with a PWA, and that it is possible to take your React Native app to the web.&lt;/p&gt;
 &lt;p&gt;Be on the lookout for a post about when you should build a PWA, and when you should build a hybrid app. Thanks!&lt;/p&gt;
 </content>
@@ -155,9 +155,9 @@
 	
 	<entry>
 		<title>Hello World</title>
-		<link href="https://cascadia.computer/eleventy-base-blog/blog/helloworld/"/>
+		<link href="https://cascadia.computer/cascadia.computer/_site/blog/helloworld/"/>
 		<updated>2023-05-08T00:00:00Z</updated>
-		<id>https://cascadia.computer/eleventy-base-blog/blog/helloworld/</id>
+		<id>https://cascadia.computer/cascadia.computer/_site/blog/helloworld/</id>
 		<content type="html">&lt;p&gt;Hello all!&lt;/p&gt;
 &lt;p&gt;First, awkward intro time:&lt;/p&gt;
 &lt;p&gt;My name is Justin Willis. I do software engineering and lots of hiking. Tech is my main passion, especially web technology and building apps / sites / tools that work for EVERYONE, not just folx with 1000$+ devices.&lt;/p&gt;
