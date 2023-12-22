@@ -4,12 +4,78 @@
 	<subtitle>Hello! I am using this space to write about tech and other things I find interesting</subtitle>
 	<link href="https://cascadia.computer/cascadia.computer/_site/feed/feed.xml" rel="self"/>
 	<link href="https://cascadia.computer/cascadia.computer/_site/"/>
-	<updated>2023-07-25T00:00:00Z</updated>
+	<updated>2023-12-21T00:00:00Z</updated>
 	<id>https://cascadia.computer</id>
 	<author>
 		<name>Justin Willis</name>
 		<email>jgw9617@gmail.com</email>
 	</author>
+	
+	<entry>
+		<title>Upgrade your Progressive Web App</title>
+		<link href="https://cascadia.computer/cascadia.computer/_site/blog/upgradeyourpwa/"/>
+		<updated>2023-12-21T00:00:00Z</updated>
+		<id>https://cascadia.computer/cascadia.computer/_site/blog/upgradeyourpwa/</id>
+		<content type="html">&lt;p&gt;So, you are building a PWA (Progressive Web Application) and you really want to nail that &amp;quot;app&amp;quot; user experience. For example, you want your app to show in the share sheet to handle shared files, or you may want a custom titlebar for your app on desktop OS&#39;s. These are the kinds of small things that can really make or break your user experience. This also used to be a place where the web fell short of native platforms, but with the rise of &lt;a href=&quot;https://developer.chrome.com/docs/capabilities&quot;&gt;Project Fugu&lt;/a&gt; over the last few years, that gap has closed fast. Let&#39;s explore just a few of the API&#39;s you can use to implement these features in your PWA.&lt;/p&gt;
+&lt;h2 id=&quot;shortcuts&quot; tabindex=&quot;-1&quot;&gt;Shortcuts &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/upgradeyourpwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://cascadia.computer/cascadia.computer/_site/img/shortcuts.png&quot; alt=&quot;Shortcuts pane on Windows 11&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=shortcuts&quot;&gt;Web Shortcuts API&lt;/a&gt; is a feature that allows you to create shortcuts (basically links) to key actions or pages within your app. These shortcuts are displayed by the operating system when the user interacts with the app’s icon, such as right-clicking on Windows or long-pressing on Android. You define your shortcuts by using the shortcuts member in the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Manifest&quot;&gt;web app manifest&lt;/a&gt; as shown in the snippet below. The shortcuts member is an array of objects, each representing a shortcut with a name, a URL, an optional description, and an optional icon.&lt;/p&gt;
+&lt;pre class=&quot;language-json&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token property&quot;&gt;&quot;shortcuts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Home&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Head straight to the home page&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;icons&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;assets/shortcuts/home-outline.png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;sizes&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;96x96&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;image/png&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Explore&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home?tab=search&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Head straight to the explore page&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;icons&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;assets/shortcuts/search-outline.png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;sizes&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;96x96&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;image/png&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;share-share-content-and-handle-shared-content&quot; tabindex=&quot;-1&quot;&gt;Share: Share content AND handle shared content &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/upgradeyourpwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;share-content-from-your-app&quot; tabindex=&quot;-1&quot;&gt;Share content from your app &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/upgradeyourpwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The Web Share API is a feature that allows websites to share text, links, files, and other content using the native share UI of the device or desktop. This means that users can share content from your PWA to any other app, even native apps, just like they normally would, and without any kind of custom share UI. This API is also relatively simple to use, with only a few lines of JavaScript needed:&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; shareData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Web Share API&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Learn how to use the Web Share API&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://docs.pwabuilder.com/#/home/native-features?id=web-share-api&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; navigator&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;shareData&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;handle-content-shared-to-your-app&quot; tabindex=&quot;-1&quot;&gt;Handle content shared to your app &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/upgradeyourpwa/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;To enable your PWA to handle content shared from other apps, such as files, you need to use the share target API. This makes your PWA show in the share sheet when, for example, a user shares a photo from the Photos app on their device, and allows you to take action to handle that shared content. This API is a bit more complicated to implement than the above APIs, with both an object you have to add to your Web App Manifest, and some JavaScript to handle the shared content in your own app. While this post will not act as a tutorial on how to implement this feature, the PWABuilder team at Microsoft has a &lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=how-to-share-to-your-pwa&quot;&gt;great tutorial&lt;/a&gt; on how to implement this API.&lt;/p&gt;
+&lt;h2 id=&quot;custom-titlebar&quot; tabindex=&quot;-1&quot;&gt;Custom titlebar &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/upgradeyourpwa/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://cascadia.computer/cascadia.computer/_site/img/titlebar.png&quot; alt=&quot;Custom titlebar in an app&quot;&gt;&lt;/p&gt;
+&lt;p&gt;And finally, we are on to the Window Controls Overlay API. The Window Controls Overlay API allows you to customize the appearance and functionality of the title bar area of your PWA. By using this API, you can display your own HTML over the entire surface area of the app window, while retaining the system-wide controls. This is also a relatively simple API to implement, with a single object to add to your web app manifest to turn this feature on. You then can use CSS to style HTML in the titlebar area of your PWA. The Web Platform also exposes some system CSS variables to make implementing custom titlebars easier, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;titlebar-area-x&lt;/code&gt;: the distance from the left of the viewport where the title bar area appears&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;titlebar-area-y&lt;/code&gt;: the distance from the top of the viewport where the title bar area appears&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;titlebar-area-width&lt;/code&gt;: the width of the title bar area&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;titlebar-area-height&lt;/code&gt;: the height of the title bar area&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more on how to implement this feature, check out &lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=window-controls-overlay&quot;&gt;this tutorial&lt;/a&gt;.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>What is a PWA?</title>
