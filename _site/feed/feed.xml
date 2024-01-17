@@ -4,12 +4,94 @@
 	<subtitle>Hello! I am using this space to write about tech and other things I find interesting</subtitle>
 	<link href="https://cascadia.computer/cascadia.computer/_site/feed/feed.xml" rel="self"/>
 	<link href="https://cascadia.computer/cascadia.computer/_site/"/>
-	<updated>2023-12-21T00:00:00Z</updated>
+	<updated>2024-01-17T00:00:00Z</updated>
 	<id>https://cascadia.computer</id>
 	<author>
 		<name>Justin Willis</name>
 		<email>jgw9617@gmail.com</email>
 	</author>
+	
+	<entry>
+		<title>Progressive Web Apps - An Intro + Answering some common questions</title>
+		<link href="https://cascadia.computer/cascadia.computer/_site/blog/pwacommonquestions/"/>
+		<updated>2024-01-17T00:00:00Z</updated>
+		<id>https://cascadia.computer/cascadia.computer/_site/blog/pwacommonquestions/</id>
+		<content type="html">&lt;p&gt;Hello! Today I want to dive a little deeper and answer some common questions about Progressive Web Applications (PWAs) that I get, but dont see answers often to &amp;quot;in the wild&amp;quot;. Let&#39;s start with a small intro, and then we will dive into the questions! We will then wrap up with an overview of some advantages PWAs have over platform-specific(native) apps.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-a-pwa&quot; tabindex=&quot;-1&quot;&gt;What is a PWA? &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwacommonquestions/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Progressive Web Applications (PWAs), at their most basic, are web apps that use modern web capabilities; at least a Web App Manifest and Service Worker, to enable advanced, native app like experiences on a user&#39;s device. PWAs can be installed through the browser, which will give the user a special install prompt if the browser detects a Web App Manifest and Service Worker, and installed through app stores, such as the Microsoft Store, Google Play and the Meta app store.&lt;/p&gt;
+&lt;p&gt;Beyond just a Web App Manifest and Service worker though, PWAs also have access to many advanced, low-level capabilities that web apps historically have not had access to. This includes things such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=shortcuts&quot;&gt;Shortcuts (also known as Jumplists on certain OS’s)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/going-fullstack/interact-with-bluetooth-devices-using-the-web-bluetooth-api-7984b2509939&quot;&gt;Bluetooth&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.chrome.com/docs/capabilities/nfc&quot;&gt;NFC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.chrome.com/docs/capabilities/usb&quot;&gt;USB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API&quot;&gt;3D and 2D graphics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.chrome.com/blog/webgpu-cross-platform/&quot;&gt;GPU access for rendering and compute&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.chrome.com/blog/imagecapture/&quot;&gt;Camera access and control&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=push-notifications&quot;&gt;Push Notifications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=window-controls-overlay&quot;&gt;Custom Titlebars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=web-share-api&quot;&gt;Share&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=how-to-share-to-your-pwa&quot;&gt;Receiving shared content&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/offline#file-system-access&quot;&gt;Writing and reading from the file system&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.chrome.com/docs/web-platform/view-transitions/&quot;&gt;Animations, including page transitions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/service-workers&quot;&gt;Can work totally offline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.pwabuilder.com/#/home/native-features?id=background-sync&quot;&gt;Sync data in the background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Web_Components&quot;&gt;Web Components, a component model built right into the browser&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And much more!&lt;/p&gt;
+&lt;p&gt;Many of these APIs have historically required you to use Electron, Cordova or some other WebView solution, you can now achieve the same functionality using JavaScript running in your browser.&lt;/p&gt;
+&lt;h2 id=&quot;common-questions&quot; tabindex=&quot;-1&quot;&gt;Common Questions &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwacommonquestions/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;While the above description gives a good overview of PWAs, let&#39;s dive into some common questions I get about them, and hopefully my answers provide clarity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aren’t the APIs mentioned above Web APIs, not PWA APIs?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yes! Many of the APIs can be used in a normal web app running in a browser tab. However, others, like shortcuts for example, require an installed PWA. A simple way to look at it is “All web APIs are PWA APIs, but not all PWA APIs are web APIs.”. However, all the capabilities are still just JavaScript running in the browser engine, the only difference is whether your app is running as an installed app (the user has installed it from the browser or app stores) or in a browser tab.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can PWAs also run in a browser tab?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yes! PWAs are basically advanced web apps, so they work perfectly fine in a normal browser tab, just like any other web app or web site. However, they can also run as installed apps! This means that users can get into your experience in whichever way they choose, whether through an app stores or browser, with no install needed to get started through the browser!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Are PWAs still using the same browser engine, JavaScript engine etc as my default browser?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yes! You can think of installed PWAs as running in a “headless” browser tab. It looks like a webview app, but it&#39;s running in the browser.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Are PWAs supported in all browsers?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yes, but with some caveats that you may be used to from feature checking for APIs such as Promises in the past. So, all PWAs are just HTML, CSS and JavaScript, atleast initially served from a web server, just like anything on the web. Because of this, they will work, atleast at some basic level, on any browser! However, this does not mean that, if your app relies on one of the advanced APIs I mentioned above, it will work in any browser. While many of the above APIs are supported cross-browser, some are Chromium only, and some are Chromium and Firefox only. Safari has historically had very limited support for anything beyond the basics in a PWA, this has been changing fast over the last 2-3 years because of social pressure, political pressure and market pressures.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Like in a WebView based app, can I write code that runs outside of the browser that I can call from my JavaScript?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;No, you cannot. This would break a few of the key advantages PWAs have, including the fact that this would prevent the app from running in the browser, plus would mean that your app is calling code that is running outside of the browsers sandbox, potentially opening security holes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What operating systems support PWAs?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Any OS that can run a modern browser, especially chromium-based browsers. Windows, Android, macOS, ChromeOS and Linux all have great support for PWAs. IOS and iPadOS have been held back for years on PWAs, but this is rapidly improving over the last two years.&lt;/p&gt;
+&lt;p&gt;Hopefully this answers some of the questions you had about Progressive Web Apps!&lt;/p&gt;
+&lt;h2 id=&quot;advantages-of-pwas-over-native-apps&quot; tabindex=&quot;-1&quot;&gt;Advantages of PWAs over native apps &lt;a class=&quot;header-anchor&quot; href=&quot;https://cascadia.computer/cascadia.computer/_site/blog/pwacommonquestions/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;PWAs are not the right stack for every app type out there, and there are of course places where platform-specific (native) apps will have their place, but PWAs can work for most apps AND provide key advantages over native apps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;True write once / deploy everywhere experience, even to app stores! Because a PWA is just a web app, it will run anywhere with no code changes, no webview, no plugins that you must code around to get working in the browser, no platform specific code etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Can be installed from both the browser and app stores, widening the reach of your application and enabling you to acquire users from multiple channels at once, with just one codebase.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Users can jump right into your app through the browser, no need to install anything. This leads to much lower friction-to-entry for users.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tend to be lighter weight on both storage size and resource usage than a native app, even with the same functionality.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Its all just standard web development skills, so if you are a web developer, you can be an app developer with PWAs, no new learning needed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;They run in the browsers sandbox, with much finer grained user control over specific actions. For example, to access the clipboard, a user will see a permission prompt first, making it clear what is happening to the user. This is a much stronger level of control than users have over native apps. PWAs cannot start up random processes, cannot start reading and writing random files, and have heavy protection against fingerprinting etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Get started building your new PWA today at &lt;a href=&quot;https://docs.pwabuilder.com/#/home/pwa-workshop&quot;&gt;Progressive Web App Intro Workshop&lt;/a&gt;.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Upgrade your Progressive Web App</title>

@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Progressive Web Apps - An Intro + Answering some common questions</title>
+		<meta name="description" content="In this post I will give a quick intro to PWAs and will then answer some common questions about PWAs!">
+		<link rel="alternate" href="/cascadia.computer/_site/feed/feed.xml" type="application/atom+xml" title="cascadia.computer">
+		<link rel="alternate" href="/cascadia.computer/_site/feed/feed.json" type="application/json" title="cascadia.computer">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+img {
+	width: 100%;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/cascadia.computer/_site/" class="home-link">cascadia.computer</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/cascadia.computer/_site/">Home</a></li>
+					<li class="nav-item"><a href="/cascadia.computer/_site/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/cascadia.computer/_site/about/">About Me</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Progressive Web Apps - An Intro + Answering some common questions</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-01-17">17 January 2024</time></li>
+</ul>
+
+<p>Hello! Today I want to dive a little deeper and answer some common questions about Progressive Web Applications (PWAs) that I get, but dont see answers often to &quot;in the wild&quot;. Let's start with a small intro, and then we will dive into the questions! We will then wrap up with an overview of some advantages PWAs have over platform-specific(native) apps.</p>
+<h2 id="what-is-a-pwa" tabindex="-1">What is a PWA? <a class="header-anchor" href="#what-is-a-pwa">#</a></h2>
+<p>Progressive Web Applications (PWAs), at their most basic, are web apps that use modern web capabilities; at least a Web App Manifest and Service Worker, to enable advanced, native app like experiences on a user's device. PWAs can be installed through the browser, which will give the user a special install prompt if the browser detects a Web App Manifest and Service Worker, and installed through app stores, such as the Microsoft Store, Google Play and the Meta app store.</p>
+<p>Beyond just a Web App Manifest and Service worker though, PWAs also have access to many advanced, low-level capabilities that web apps historically have not had access to. This includes things such as:</p>
+<ul>
+<li><a href="https://docs.pwabuilder.com/#/home/native-features?id=shortcuts">Shortcuts (also known as Jumplists on certain OS’s)</a></li>
+<li><a href="https://medium.com/going-fullstack/interact-with-bluetooth-devices-using-the-web-bluetooth-api-7984b2509939">Bluetooth</a></li>
+<li><a href="https://developer.chrome.com/docs/capabilities/nfc">NFC</a></li>
+<li><a href="https://developer.chrome.com/docs/capabilities/usb">USB</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">3D and 2D graphics</a></li>
+<li><a href="https://developer.chrome.com/blog/webgpu-cross-platform/">GPU access for rendering and compute</a></li>
+<li><a href="https://developer.chrome.com/blog/imagecapture/">Camera access and control</a></li>
+<li><a href="https://docs.pwabuilder.com/#/home/native-features?id=push-notifications">Push Notifications</a></li>
+<li><a href="https://docs.pwabuilder.com/#/home/native-features?id=window-controls-overlay">Custom Titlebars</a></li>
+<li><a href="https://docs.pwabuilder.com/#/home/native-features?id=web-share-api">Share</a></li>
+<li><a href="https://docs.pwabuilder.com/#/home/native-features?id=how-to-share-to-your-pwa">Receiving shared content</a></li>
+<li><a href="https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/offline#file-system-access">Writing and reading from the file system</a></li>
+<li><a href="https://developer.chrome.com/docs/web-platform/view-transitions/">Animations, including page transitions</a></li>
+<li><a href="https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/service-workers">Can work totally offline</a></li>
+<li><a href="https://docs.pwabuilder.com/#/home/native-features?id=background-sync">Sync data in the background</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Components">Web Components, a component model built right into the browser</a></li>
+</ul>
+<p>And much more!</p>
+<p>Many of these APIs have historically required you to use Electron, Cordova or some other WebView solution, you can now achieve the same functionality using JavaScript running in your browser.</p>
+<h2 id="common-questions" tabindex="-1">Common Questions <a class="header-anchor" href="#common-questions">#</a></h2>
+<p>While the above description gives a good overview of PWAs, let's dive into some common questions I get about them, and hopefully my answers provide clarity.</p>
+<ul>
+<li>Aren’t the APIs mentioned above Web APIs, not PWA APIs?</li>
+</ul>
+<p>Yes! Many of the APIs can be used in a normal web app running in a browser tab. However, others, like shortcuts for example, require an installed PWA. A simple way to look at it is “All web APIs are PWA APIs, but not all PWA APIs are web APIs.”. However, all the capabilities are still just JavaScript running in the browser engine, the only difference is whether your app is running as an installed app (the user has installed it from the browser or app stores) or in a browser tab.</p>
+<ul>
+<li>Can PWAs also run in a browser tab?</li>
+</ul>
+<p>Yes! PWAs are basically advanced web apps, so they work perfectly fine in a normal browser tab, just like any other web app or web site. However, they can also run as installed apps! This means that users can get into your experience in whichever way they choose, whether through an app stores or browser, with no install needed to get started through the browser!</p>
+<ul>
+<li>Are PWAs still using the same browser engine, JavaScript engine etc as my default browser?</li>
+</ul>
+<p>Yes! You can think of installed PWAs as running in a “headless” browser tab. It looks like a webview app, but it's running in the browser.</p>
+<ul>
+<li>Are PWAs supported in all browsers?</li>
+</ul>
+<p>Yes, but with some caveats that you may be used to from feature checking for APIs such as Promises in the past. So, all PWAs are just HTML, CSS and JavaScript, atleast initially served from a web server, just like anything on the web. Because of this, they will work, atleast at some basic level, on any browser! However, this does not mean that, if your app relies on one of the advanced APIs I mentioned above, it will work in any browser. While many of the above APIs are supported cross-browser, some are Chromium only, and some are Chromium and Firefox only. Safari has historically had very limited support for anything beyond the basics in a PWA, this has been changing fast over the last 2-3 years because of social pressure, political pressure and market pressures.</p>
+<ul>
+<li>Like in a WebView based app, can I write code that runs outside of the browser that I can call from my JavaScript?</li>
+</ul>
+<p>No, you cannot. This would break a few of the key advantages PWAs have, including the fact that this would prevent the app from running in the browser, plus would mean that your app is calling code that is running outside of the browsers sandbox, potentially opening security holes.</p>
+<ul>
+<li>What operating systems support PWAs?</li>
+</ul>
+<p>Any OS that can run a modern browser, especially chromium-based browsers. Windows, Android, macOS, ChromeOS and Linux all have great support for PWAs. IOS and iPadOS have been held back for years on PWAs, but this is rapidly improving over the last two years.</p>
+<p>Hopefully this answers some of the questions you had about Progressive Web Apps!</p>
+<h2 id="advantages-of-pwas-over-native-apps" tabindex="-1">Advantages of PWAs over native apps <a class="header-anchor" href="#advantages-of-pwas-over-native-apps">#</a></h2>
+<p>PWAs are not the right stack for every app type out there, and there are of course places where platform-specific (native) apps will have their place, but PWAs can work for most apps AND provide key advantages over native apps:</p>
+<ul>
+<li>
+<p>True write once / deploy everywhere experience, even to app stores! Because a PWA is just a web app, it will run anywhere with no code changes, no webview, no plugins that you must code around to get working in the browser, no platform specific code etc.</p>
+</li>
+<li>
+<p>Can be installed from both the browser and app stores, widening the reach of your application and enabling you to acquire users from multiple channels at once, with just one codebase.</p>
+</li>
+<li>
+<p>Users can jump right into your app through the browser, no need to install anything. This leads to much lower friction-to-entry for users.</p>
+</li>
+<li>
+<p>Tend to be lighter weight on both storage size and resource usage than a native app, even with the same functionality.</p>
+</li>
+<li>
+<p>Its all just standard web development skills, so if you are a web developer, you can be an app developer with PWAs, no new learning needed.</p>
+</li>
+<li>
+<p>They run in the browsers sandbox, with much finer grained user control over specific actions. For example, to access the clipboard, a user will see a permission prompt first, making it clear what is happening to the user. This is a much stronger level of control than users have over native apps. PWAs cannot start up random processes, cannot start reading and writing random files, and have heavy protection against fingerprinting etc.</p>
+</li>
+</ul>
+<p>Get started building your new PWA today at <a href="https://docs.pwabuilder.com/#/home/pwa-workshop">Progressive Web App Intro Workshop</a>.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/cascadia.computer/_site/blog/upgradeyourpwa/">Upgrade your Progressive Web App</a></li>
+</ul>
+
+		</main>
+
+		<footer></footer>
+
+		<!-- Current page: /cascadia.computer/_site/blog/pwacommonquestions/ -->
+	</body>
+</html>
