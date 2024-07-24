@@ -69,6 +69,18 @@ Any OS that can run a modern browser, especially chromium-based browsers. Window
 
 While it would depend on the MDM provider you are using, for Intune atleast, the answer is yes. PWAs can be installed and managed through Intune just like any other application. [More Info](https://learn.microsoft.com/en-us/surface-hub/install-pwa-surface-hub)
 
+- On Windows, can PWAs use the Windows Copilot Library and Windows Copilot Runtime? 
+
+The answer is a combination of yes and no. 
+
+No, PWAs can not explicitly use the Windows Copilot Library, however, studio effects are automatically supported in PWAs, Edge has an [OCR capable API](https://developer.chrome.com/docs/capabilities/shape-detection) and Phi Mini, which Microsoft offers specific web optimized versions for, can be run using WebNN. 
+
+On the Windows Copilot Runtime, WebNN, which is considered part of the Runtime, is what PWAs and other web based apps would use. This uses DML under the hood and supports the same operators, models, hardware etc.
+
+So in summary, PWAs can access everything except recall in the Windows Copilot Library even though the library does not have explicit support for Web Apps, and yes PWAs can use the Windows Copilot Runtime by using WebNN.
+
+[More Info](https://learn.microsoft.com/en-us/windows/ai/directml/webnn-overview)
+
 Hopefully this answers some of the questions you had about Progressive Web Apps!
 
 ## Advantages of PWAs over native apps
