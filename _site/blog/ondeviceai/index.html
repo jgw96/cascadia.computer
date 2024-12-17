@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Hello World</title>
-		<meta name="description" content="My third blog reboot">
+		<title>Bringing AI to the Browser - On-Device AI with Web AI Toolkit</title>
+		<meta name="description" content="Learn how to implement On-Device AI in web apps using Web AI Toolkit for privacy, low latency, and offline capabilities.&quot;">
 		<link rel="alternate" href="/eleventy-base-blog/feed/feed.xml" type="application/atom+xml" title="cascadia.computer">
 		<link rel="alternate" href="/eleventy-base-blog/feed/feed.json" type="application/json" title="cascadia.computer">
 		
@@ -469,43 +469,54 @@ img {
 
 		<main id="skip">
 			
-<h1>Hello World</h1>
+<h1>Bringing AI to the Browser - On-Device AI with Web AI Toolkit</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2023-05-08">08 May 2023</time></li>
+	<li><time datetime="2024-12-16">16 December 2024</time></li>
 </ul>
 
-<p>Hello all!</p>
-<p>First, awkward intro time:</p>
-<p>My name is Justin Willis. I do software engineering and lots of hiking. Tech is my main passion, especially web technology and building apps / sites / tools that work for EVERYONE, not just folx with 1000$+ devices.</p>
-<p>This is my third reboot, lol, of my personal blog. I am going to use this space to talk about:</p>
+<p>Welcome! Today we will be covering On-Device AI for Web Apps. Yes, you can run AI models on the users device, accelerated by a GPU or even NPU all from your web app, no hybrid framework or plugins needed. We will start with what On-Device AI is along with some benefits, and then we will showcase how to get started with AI on the Web with the Web AI Toolkit!</p>
+<h2 id="what-is-on-device-ai" tabindex="-1">What is On-Device AI? <a class="header-anchor" href="#what-is-on-device-ai">#</a></h2>
+<p>On-device AI refers to running AI models directly on the user's device, such as a GPU, NPU, or even a CPU. The key aspect is that the AI model runs locally on the user's machine, not in the cloud.</p>
+<p>This approach offers several benefits:</p>
 <ul>
-<li>Tech</li>
-<li>Video Games</li>
-<li>Nature</li>
-<li>Electric Vehicles</li>
-<li>Mental Health</li>
+<li>Privacy: Data processing happens entirely on the device, ensuring user data doesn't leave their machine.</li>
+<li>Latency and Performance: Running models locally can reduce latency and improve performance, depending on the model size.</li>
+<li>Offline Capability: It works even without an internet connection, making it ideal for users with poor network connectivity or who are offline.</li>
 </ul>
-<p>While I am writing content, here are some links:</p>
-<ul>
-<li><a href="https://tech.lgbt/@lilPWA">Mastodon</a></li>
-<li><a href="https://github.com/jgw96">GitHub</a></li>
-<li><a href="https://twitter.com/Justinwillis96">Elon Hellscape</a></li>
-</ul>
-<p>Current Projects I am actually focusing on:</p>
-<ul>
-<li><a href="https://www.mammothsocial.app">Mammoth Web (no not the iOS app), a cross-platform, AI enhanced Mastodon client</a></li>
-<li><a href="https://white-rock-01cf9891e.3.azurestaticapps.net/">Memos AI, Memos AI allows you to record notes with ACCURATE transcriptions, powered by AI, on any device</a></li>
-</ul>
-<p>At work (Microsoft) I work on Progressive Web Applications and the <a href="https://www.pwabuilder.com">PWABuilder</a> project.</p>
+<h3 id="cpu-gpu-npu" tabindex="-1">CPU, GPU, NPU??? <a class="header-anchor" href="#cpu-gpu-npu">#</a></h3>
+<p>When running on-device AI, the choice of hardware to run your model on—CPU, GPU, or NPU—can significantly impact performance and application design.</p>
+<p>CPUs are versatile and, obviously, widely available but are not optimized for the immense parallel processing required for running AI models, making them slower for running larger AI models, and potentially heavily impacting battery usage.</p>
+<p>GPUs (Graphics Processing Units), on the other hand, excel at parallel processing, enabling faster execution of AI models, but can still be power-hungry and generate significant heat, especially on laptops or mobile devices.</p>
+<p>NPUs (Neural Processing Unit) are specialized hardware designed specifically for AI workloads, offering great performance for a wide variety of models while, maybe more importantly, offering great battery life. They are however, much less common at the moment.</p>
+<p>Choosing the right hardware to run your AI workloads depends on balancing availability, power efficiency, and performance for your target use case, luckily the Web AI Toolkit handles this for you.</p>
+<p>Now that we’ve covered the benefits of On-Device AI and hardware considerations, let’s dive into implementing a common AI enabled feature, speech-to-text, using the Web AI Toolkit.</p>
+<h2 id="web-ai-toolkit" tabindex="-1">Web AI Toolkit <a class="header-anchor" href="#web-ai-toolkit">#</a></h2>
+<h3 id="get-started-let-s-implement-speech-to-text" tabindex="-1">Get Started: Let's implement speech-to-text <a class="header-anchor" href="#get-started-let-s-implement-speech-to-text">#</a></h3>
+<p>Now that we've discussed the benefits of on-device AI, let's talk about how to get started implementing it in your web applications. To make this easier, we'll use a library I wrote called the <a href="https://github.com/jgw96/web-ai-toolkit">Web AI Toolkit</a>. The toolkit's main goal is to simplify building AI features in your web apps. It makes implementing common AI features like speech-to-text and text summarization on-device incredibly easy, all with just two lines of JavaScript.</p>
+<p>To get started with the Web AI Toolkit, the first step is to install it from npm by running:</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> web-ai-toolkit</code></pre>
+<p>With the library installed, we are ready to start using the toolkit. The <a href="https://github.com/jgw96/web-ai-toolkit?tab=readme-ov-file#web-ai-toolkit">GitHub README</a> for the Web AI Toolkit lists all of the available features; with examples of how to use them.</p>
+<p>For our example, we'll look at implementing speech-to-text. For speech-to-text, we will import the <code>transcribeAudioFile</code> function and pass an audio file (as a Blob) to the function. The function will then return the transcribed text from the audio.</p>
+<pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> transcribeAudioFile <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'web-ai-toolkit'</span><span class="token punctuation">;</span>
 
-<ul class="links-nextprev"><li>Next: <a href="/eleventy-base-blog/blog/pwasinappstores/">How do I, a web developer, build an app?</a></li>
+<span class="token keyword">const</span> audioFile <span class="token operator">=</span> <span class="token operator">...</span><span class="token punctuation">;</span> <span class="token comment">// Your audio file Blob</span>
+<span class="token keyword">const</span> transcription <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">transcribeAudioFile</span><span class="token punctuation">(</span>audioFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>transcription<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="how-it-works" tabindex="-1">How it works <a class="header-anchor" href="#how-it-works">#</a></h3>
+<p>The Web AI Toolkit integrates with HuggingFace's powerful <a href="https://github.com/huggingface/transformers.js">Transformers.js library</a> to run AI models on-device.</p>
+<p>For example, for <code>transcribeAudioFile</code>, the Web AI Toolkit uses an <code>AutomaticSpeechRecognitionPipeline</code> pipeline from the Transformers.js library to actually run the model, which by default is Whisper Tiny. First, some hardware checks will happen, such as using the WebGPU API to get some information about the capabilities of your GPU, if one is available. These checks will help us choose which hardware to run our AI workload on. The toolkit then handles loading the pipeline on demand (and ensuring its only initialized once, a common performance pitfall). If a pipeline is ready to go, or has been newly initialized, it then will prepare the audio from the blob for Whisper, including combining stereo channels into one. Once this is done, the speech-to-text pipeline is ran, returning the text when available. All JavaScript running on the CPU (remember, the actual model itself is being run on the GPU on most devices) is also run in a web worker, ensuring your UI stays smooth and jank free.</p>
+<h2 id="thanks" tabindex="-1">Thanks! <a class="header-anchor" href="#thanks">#</a></h2>
+<p>On-device AI in the browser is a game-changer for apps, offering privacy, low latency, and offline capabilities—and potentially reducing your cloud costs.</p>
+<p>Whether you're building next-generation web applications or exploring the potential of AI on the web, the Web AI Toolkit provides the tools you need to get started quickly and efficiently. Ready to try On-Device AI? Install the <a href="https://github.com/jgw96/web-ai-toolkit">Web AI Toolkit</a> today and build your first AI-powered web app in minutes!</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/eleventy-base-blog/blog/pwacommonquestions/">Progressive Web Apps - An Intro + Answering some common questions</a></li>
 </ul>
 
 		</main>
 
 		<footer></footer>
 
-		<!-- Current page: /eleventy-base-blog/blog/helloworld/ -->
+		<!-- Current page: /eleventy-base-blog/blog/ondeviceai/ -->
 	</body>
 </html>

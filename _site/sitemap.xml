@@ -2,52 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/blog/helloworld/</loc>
+		<loc>https://cascadia.computer/eleventy-base-blog/blog/helloworld/</loc>
 		<lastmod>2023-05-08</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/blog/pwasinappstores/</loc>
+		<loc>https://cascadia.computer/eleventy-base-blog/blog/pwasinappstores/</loc>
 		<lastmod>2023-05-09</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/blog/memosai/</loc>
+		<loc>https://cascadia.computer/eleventy-base-blog/blog/memosai/</loc>
 		<lastmod>2023-05-15</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/blog/whatisapwa/</loc>
+		<loc>https://cascadia.computer/eleventy-base-blog/blog/whatisapwa/</loc>
 		<lastmod>2023-07-25</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/blog/upgradeyourpwa/</loc>
+		<loc>https://cascadia.computer/eleventy-base-blog/blog/upgradeyourpwa/</loc>
 		<lastmod>2023-12-21</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/about/</loc>
-		<lastmod>2023-12-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/blog/</loc>
-		<lastmod>2023-12-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/</loc>
-		<lastmod>2023-12-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/tags/</loc>
-		<lastmod>2023-12-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://cascadia.computer/cascadia.computer/_site/blog/pwacommonquestions/</loc>
+		<loc>https://cascadia.computer/eleventy-base-blog/blog/pwacommonquestions/</loc>
 		<lastmod>2024-07-24</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/eleventy-base-blog/blog/ondeviceai/</loc>
+		<lastmod>2024-12-16</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/eleventy-base-blog/about/</loc>
+		<lastmod>2024-12-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/eleventy-base-blog/blog/</loc>
+		<lastmod>2024-12-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/eleventy-base-blog/</loc>
+		<lastmod>2024-12-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://cascadia.computer/eleventy-base-blog/tags/</loc>
+		<lastmod>2024-12-17</lastmod>
 	</url>
 </urlset>
