@@ -1,5 +1,5 @@
 ---
-title: Bringing AI to the Browser - On-Device AI with Web AI Toolkit
+title: Bringing AI to the Browser - On-Device AI with the Web AI Toolkit
 description: Learn how to implement On-Device AI in web apps using Web AI Toolkit for privacy, low latency, and offline capabilities."
 date: 2024-12-16
 ---
